@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+    <title>QuadB</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <h1>
+          HODLINFO
+          <p>.com</p>
+        </h1>
+        <p>Powered by <span>Finstreet</span> </p>
+      </div>
+      <div class="scroll-down">
+        <form>
+          <select id="cars" name="cars">
+            <option value="volvo">INR</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select>
+        </form>
+        <form>
+          <select id="cars" name="cars">
+            <option value="volvo">BTC</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select>
+        </form>
+      </div>
+        <div class="telegram">
+          <button class="tele-num">58</button>
+          <button class="connect-tele">
+            <img src="./image/telegram.png" alt="">
+            Connect Telegram</button>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider round"></span>
+          </label>
+        </div>
+    </div>
+    <div class="cards">
+      <div class="card-head">
+        <div style="text-align: left; width: 10%;"><h3>#</h3></div>
+        <div><h3>name</h3></div>
+        <div> <h3>Last</h3></div>
+        <div><h3>Buy/Sell price</h3></div>
+        <div><h3>Volume</h3></div>
+        <div style="text-align: right; width: 10%;"><h3>base_unit</h3></div>
+      </div>
+      
+      <% for(var i = 0; i < values.length; i++) { %>
+        <div class="indivisual">
+          <div style="text-align: left; width: 10%;"> <h3><%= i + 1 %></h3></div>
+          <div> <h3 class="name"><%= values[i].name %></h3></div>
+          <div><h3 class="last"><span>&#8377;</span>&nbsp;<%= parseInt(values[i].last).toLocaleString() %></h3></div>
+          <div><h3 class="buy-sell"><span>&#8377;</span>&nbsp;<%= parseInt(values[i].buy).toLocaleString()%>&nbsp;/&nbsp;<span>&#8377;</span>&nbsp;<%= parseInt(values[i].sell).toLocaleString() %></h3></div>
+          <div><h3 class="vol"><%= values[i].volume %></h3></div>
+          <div style="text-align: right; width: 10%;
+          "><h3 style='margin-right: 18px;'class="base"><%= values[i].base_unit %></h3></div>
+        </div>
+      <% } %> 
+      <br><br><br>
+    </div>
+  </body>
+</html>
